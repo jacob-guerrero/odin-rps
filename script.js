@@ -1,13 +1,12 @@
 function getComputerChoice() {
-    return Math.floor(Math.random() * 3);
-    
+    let computerChoice = Math.floor(Math.random() * 3);
+    if (computerChoice == 0) {
+        return "Rock";
+    } else if (computerChoice == 1) {
+        return "Paper";
+    } else {
+        return "Scissors";
+    }
 }
-let computerChoice;
-if (getComputerChoice() == 0) {
-    computerChoice = "Rock";
-} else if (getComputerChoice() == 1) {
-    computerChoice = "Paper";
-} else {
-    computerChoice = "Scissors";
-}
-console.log (computerChoice)
+
+console.log (getComputerChoice()) 

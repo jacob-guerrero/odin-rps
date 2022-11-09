@@ -9,15 +9,20 @@ function getComputerChoice() {
     }
 }
 
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == computerSelection) {
+        return "It's a draw!";
+    } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")){
+        return `You Win!, ${playerSelection} beats ${computerSelection}`;
+    } else {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    }
+}
 let playerSelection = "paPEr".toLowerCase();
 let computerSelection = getComputerChoice().toLowerCase();
-if (playerSelection == computerSelection) {
-    console.log("It's a draw!");
-} else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")){
-    console.log(`You Win!, ${playerSelection} beats ${computerSelection}`);
-} else {
-    console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
-}
+
+
+console.log(playRound(playerSelection, computerSelection));
 
 /* let playerSelection = "Rock".toLowerCase();
 let computerSelection = getComputerChoice().toLowerCase();

@@ -9,6 +9,9 @@ function getComputerChoice() {
     }
 }
 
+let playerSelection;
+let computerSelection;
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         console.log("It's a draw!");
@@ -19,12 +22,12 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function updateComputerChoice() {
-    computerSelection = getComputerChoice();
-}
-
 function updatePlayerSelection() {
     playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
+}
+
+function updateComputerChoice() {
+    computerSelection = getComputerChoice();
 }
 
 function game() {

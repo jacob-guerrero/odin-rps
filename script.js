@@ -15,9 +15,11 @@ let computerPoints = 0;
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         return "It's a tie!";
-    } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")){
-        playerPoints += 1;
-        return `You Win!, ${playerSelection} beats ${computerSelection}`;
+    } else if ((playerSelection == "rock" && computerSelection == "scissors") || 
+                (playerSelection == "paper" && computerSelection == "rock") || 
+                (playerSelection == "scissors" && computerSelection == "paper")) {
+                    playerPoints += 1;
+                    return `You Win!, ${playerSelection} beats ${computerSelection}`;
     } else {
         computerPoints += 1;
         return `You Lose! ${computerSelection} beats ${playerSelection}`;
@@ -32,7 +34,7 @@ function updateComputerChoice() {
     computerSelection = getComputerChoice();
 }
 
-function game() {
+function playGame() {
     for (let i = 0; i < 5; i++) {
         updatePlayerSelection();
         updateComputerChoice();
@@ -47,4 +49,4 @@ function game() {
     }
 }
 
-game();
+playGame();

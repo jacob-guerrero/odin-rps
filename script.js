@@ -9,16 +9,18 @@ function getComputerChoice() {
     }
 }
 
-let playerSelection;
-let computerSelection;
+let playerPoints = 0;
+let computerPoints = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
-        console.log("It's a draw!");
+        return "It's a tie!";
     } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")){
-        console.log(`You Win!, ${playerSelection} beats ${computerSelection}`);
+        playerPoints += 1;
+        return `You Win!, ${playerSelection} beats ${computerSelection}`;
     } else {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+        computerPoints += 1;
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
 
@@ -34,7 +36,14 @@ function game() {
     for (let i = 0; i < 5; i++) {
         updatePlayerSelection();
         updateComputerChoice();
-        playRound(playerSelection, computerSelection);
+        console.log (playRound(playerSelection, computerSelection));
+    }
+    if (playerPoints == computerPoints) {
+        console.log("It's a tie!");
+    } else if (playerPoints > computerPoints){
+        console.log(`You are the Winner! ${playerPoints}-${computerPoints}`);
+    } else {
+        console.log(`You are the Loser! ${computerPoints}-${playerPoints}`);
     }
 }
 

@@ -25,6 +25,7 @@ function playRound(playerSelection, computerSelection) {
                     return `You Win!, ${playerSelection} beats ${computerSelection}`;
     } else {
         computerPoints += 1;
+
         updateTextScoreLose();
         return `You Lose!, ${computerSelection} beats ${playerSelection}`;
     }
@@ -54,7 +55,7 @@ function updateComputerChoice() {
 } */
 
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('#container button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         /* console.log(button.id); */
@@ -67,13 +68,21 @@ buttons.forEach((button) => {
 
         if (playerPoints === 5 || computerPoints === 5) {
             setResult();
-            buttons.forEach(elem => {
-                elem.disabled = true;
-            });
+            endGame();
         }
     });
 });
 
+
+function endGame() {
+    buttons.forEach(elem => {
+        elem.disabled = true;
+    });
+
+    const newButton = document.createElement('button');
+    newButton.textContent = "¡Play Again!";
+    document.querySelector('#result').appendChild(newButton);
+}
 
 const textScore = document.querySelector('#textScore');
 
@@ -91,6 +100,7 @@ function updateTextScoreLose() {
 function updateScore() {
     const scoreDiv = document.querySelector('#score');
     const points = document.querySelector('#points');
+
     points.textContent = `${playerPoints} - ${computerPoints}`;
     scoreDiv.insertBefore(points, textScore);
 }

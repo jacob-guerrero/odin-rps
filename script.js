@@ -22,24 +22,24 @@ function playRound(playerSelection, computerSelection) {
                     return `You Win!, ${playerSelection} beats ${computerSelection}`;
     } else {
         computerPoints += 1;
-        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        return `You Lose!, ${computerSelection} beats ${playerSelection}`;
     }
-}
-
-function updatePlayerSelection() {
-    playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
 }
 
 function updateComputerChoice() {
     computerSelection = getComputerChoice();
 }
 
-function playGame() {
-    /* for (let i = 0; i < 5; i++) {
+/* function updatePlayerSelection() {
+    playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
+} */
+
+/* function playGame() {
+    for (let i = 0; i < 5; i++) {
         updatePlayerSelection();
         updateComputerChoice();
         console.log (playRound(playerSelection, computerSelection));
-    } */
+    }
     if (playerPoints == computerPoints) {
         console.log("It's a tie!");
     } else if (playerPoints > computerPoints){
@@ -47,17 +47,29 @@ function playGame() {
     } else {
         console.log(`You are the Loser! ${playerPoints}-${computerPoints}`);
     }
-}
+} */
 
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(button.id);
+        /* console.log(button.id); */
         playerSelection = button.id;
         updateComputerChoice();
-        console.log (playRound(playerSelection, computerSelection));
-    })
-})
 
-playGame();
+        console.log (playRound(playerSelection, computerSelection));
+        console.log (playerPoints, computerPoints);
+
+    });
+});
+
+function setResult() {
+    const resultDiv = document.querySelector('#result');
+    const result = document.createElement ('p');
+
+    (playerPoints > computerPoints) ?
+    result.textContent = `You are the Winner! ${playerPoints}-${computerPoints}` :
+    result.textContent = `You are the Loser! ${playerPoints}-${computerPoints}`;
+
+    resultDiv.appendChild(result);
+}

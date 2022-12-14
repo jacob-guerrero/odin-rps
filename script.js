@@ -49,4 +49,15 @@ function playGame() {
     }
 }
 
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(button.id);
+        playerSelection = button.id;
+        updateComputerChoice();
+        console.log (playRound(playerSelection, computerSelection));
+    })
+})
+
 playGame();

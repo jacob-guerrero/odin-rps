@@ -35,17 +35,17 @@ function updateComputerChoice() {
 }
 
 function playGame() {
-    for (let i = 0; i < 5; i++) {
+    /* for (let i = 0; i < 5; i++) {
         updatePlayerSelection();
         updateComputerChoice();
         console.log (playRound(playerSelection, computerSelection));
-    }
+    } */
     if (playerPoints == computerPoints) {
         console.log("It's a tie!");
     } else if (playerPoints > computerPoints){
         console.log(`You are the Winner! ${playerPoints}-${computerPoints}`);
     } else {
-        console.log(`You are the Loser! ${computerPoints}-${playerPoints}`);
+        console.log(`You are the Loser! ${playerPoints}-${computerPoints}`);
     }
 }
 

@@ -14,14 +14,18 @@ let computerPoints = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
+        updateTextScoreTie();
         return "It's a tie!";
     } else if ((playerSelection == "rock" && computerSelection == "scissors") || 
                 (playerSelection == "paper" && computerSelection == "rock") || 
                 (playerSelection == "scissors" && computerSelection == "paper")) {
                     playerPoints += 1;
+                    
+                    updateTextScoreWin();
                     return `You Win!, ${playerSelection} beats ${computerSelection}`;
     } else {
         computerPoints += 1;
+        updateTextScoreLose();
         return `You Lose!, ${computerSelection} beats ${playerSelection}`;
     }
 }
@@ -69,6 +73,25 @@ buttons.forEach((button) => {
         }
     });
 });
+
+function updateTextScoreWin() {
+    const scoreDiv = document.querySelector('#score');
+    const textScore = document.querySelector('#textScore');
+    textScore.textContent = `You Win!, ${playerSelection} beats ${computerSelection}`;
+    scoreDiv.appendChild(textScore);
+}
+function updateTextScoreLose() {
+    const scoreDiv = document.querySelector('#score');
+    const textScore = document.querySelector('#textScore');
+    textScore.textContent = `You Lose!, ${computerSelection} beats ${playerSelection}`;
+    scoreDiv.appendChild(textScore);
+}
+function updateTextScoreTie() {
+    const scoreDiv = document.querySelector('#score');
+    const textScore = document.querySelector('#textScore');
+    textScore.textContent = `It's a tie!`;
+    scoreDiv.appendChild(textScore);
+}
 
 function updateScore() {
     const scoreDiv = document.querySelector('#score');

@@ -60,6 +60,12 @@ buttons.forEach((button) => {
         console.log (playRound(playerSelection, computerSelection));
         console.log (playerPoints, computerPoints);
 
+        if (playerPoints === 5 || computerPoints === 5) {
+            setResult();
+            buttons.forEach(elem => {
+                elem.disabled = true;
+            });
+        }
     });
 });
 

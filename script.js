@@ -74,30 +74,25 @@ buttons.forEach((button) => {
     });
 });
 
+
+const textScore = document.querySelector('#textScore');
+
+function updateTextScoreTie() {
+    textScore.textContent = `It's a tie!`;
+}
 function updateTextScoreWin() {
-    const scoreDiv = document.querySelector('#score');
-    const textScore = document.querySelector('#textScore');
     textScore.textContent = `You Win!, ${playerSelection} beats ${computerSelection}`;
-    scoreDiv.appendChild(textScore);
 }
 function updateTextScoreLose() {
-    const scoreDiv = document.querySelector('#score');
-    const textScore = document.querySelector('#textScore');
     textScore.textContent = `You Lose!, ${computerSelection} beats ${playerSelection}`;
-    scoreDiv.appendChild(textScore);
 }
-function updateTextScoreTie() {
-    const scoreDiv = document.querySelector('#score');
-    const textScore = document.querySelector('#textScore');
-    textScore.textContent = `It's a tie!`;
-    scoreDiv.appendChild(textScore);
-}
+
 
 function updateScore() {
     const scoreDiv = document.querySelector('#score');
     const points = document.querySelector('#points');
     points.textContent = `${playerPoints} - ${computerPoints}`;
-    scoreDiv.appendChild(points);
+    scoreDiv.insertBefore(points, textScore);
 }
 
 function setResult() {

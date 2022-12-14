@@ -59,6 +59,7 @@ buttons.forEach((button) => {
 
         console.log (playRound(playerSelection, computerSelection));
         console.log (playerPoints, computerPoints);
+        updateScore();
 
         if (playerPoints === 5 || computerPoints === 5) {
             setResult();
@@ -68,6 +69,13 @@ buttons.forEach((button) => {
         }
     });
 });
+
+function updateScore() {
+    const scoreDiv = document.querySelector('#score');
+    const points = document.querySelector('#points');
+    points.textContent = `${playerPoints} - ${computerPoints}`;
+    scoreDiv.appendChild(points);
+}
 
 function setResult() {
     const resultDiv = document.querySelector('#result');

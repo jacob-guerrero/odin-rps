@@ -73,6 +73,22 @@ buttons.forEach((button) => {
     });
 });
 
+function newGame() {
+    buttons.forEach(elem => {
+        elem.disabled = false;
+    });
+
+    playerPoints = 0;
+    computerPoints = 0;
+    updateScore();
+
+    textScore.textContent = 'Start Now!';
+
+    const resultDiv = document.querySelector('#result');
+    while (resultDiv.firstChild) {
+        resultDiv.removeChild(resultDiv.firstChild);
+    }
+}
 
 function endGame() {
     buttons.forEach(elem => {
@@ -82,6 +98,8 @@ function endGame() {
     const newButton = document.createElement('button');
     newButton.textContent = "¡Play Again!";
     document.querySelector('#result').appendChild(newButton);
+
+    newButton.addEventListener('click', newGame);
 }
 
 const textScore = document.querySelector('#textScore');

@@ -93,8 +93,8 @@ function newGame() {
 
 function endGame() {
     buttons.forEach(elem => {
-        elem.disabled = true;
         elem.classList.add('block');
+        elem.disabled = true;
     });
 
     const newButton = document.createElement('button');

@@ -75,6 +75,7 @@ buttons.forEach((button) => {
 
 function newGame() {
     buttons.forEach(elem => {
+        elem.classList.remove('block');
         elem.disabled = false;
     });
 
@@ -93,6 +94,7 @@ function newGame() {
 function endGame() {
     buttons.forEach(elem => {
         elem.disabled = true;
+        elem.classList.add('block');
     });
 
     const newButton = document.createElement('button');
@@ -134,6 +136,7 @@ function setResult() {
     resultDiv.appendChild(result);
 }
 
+
 function highlight(e) {
     const button = document.querySelector(`.btn[id='${e.target.id}']`);
     button.classList.add('playing');
@@ -148,5 +151,4 @@ buttons.forEach(button => button.addEventListener('transitionend', removeTransit
 
 buttons.forEach((button) => {
     button.addEventListener('click', highlight);
-    /* button.addEventListener('mouseup', removeTransition); */
 });

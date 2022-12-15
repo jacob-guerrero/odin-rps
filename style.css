@@ -49,17 +49,23 @@ h1 {
     height: 5rem;
     font-weight: 700;
     
-    border: .2rem solid #333;
+    border: .15rem solid #333;
     border-radius: .4rem;
     transition: all 0.1s ease;
     color: #eee;
-    background: rgba(3,3,3,0.4);
+    background: #3b3535bd;
     text-shadow: 0 0 .5rem #222;
 }
 .playing{
     transform: scale(1.1);
     border-color: #5292f8;
     box-shadow: 0 0 1rem #5292f8d7;
+}
+.block{
+    border: .15rem solid #777;
+    color: #eee;
+    background: #756d6dbd;
+    text-shadow: 0 0 .5rem #555;
 }
 
 #score {

@@ -133,3 +133,20 @@ function setResult() {
 
     resultDiv.appendChild(result);
 }
+
+function highlight(e) {
+    const button = document.querySelector(`.btn[id='${e.target.id}']`);
+    button.classList.add('playing');
+  };
+
+function removeTransition(e) {
+    if(e.propertyName !== 'transform') return;
+    this.classList.remove('playing');
+  }
+
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
+
+buttons.forEach((button) => {
+    button.addEventListener('click', highlight);
+    /* button.addEventListener('mouseup', removeTransition); */
+});

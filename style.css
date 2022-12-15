@@ -35,7 +35,7 @@ h1 {
 }
 
 #container {
-    height: 30vh;
+    height: 20vh;
     width: 100%;
     padding: 0 16px;
     display: flex;
@@ -47,10 +47,23 @@ h1 {
 .btn {
     width: 5rem;
     height: 5rem;
+    font-weight: 700;
+    
+    border: .2rem solid #333;
+    border-radius: .4rem;
+    transition: all 0.1s ease;
+    color: #eee;
+    background: rgba(3,3,3,0.4);
+    text-shadow: 0 0 .5rem #222;
+}
+.playing{
+    transform: scale(1.1);
+    border-color: #5292f8;
+    box-shadow: 0 0 1rem #5292f8d7;
 }
 
 #score {
-    height: 20vh;
+    height: 25vh;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -63,7 +76,7 @@ h1 {
 }
 
 #result {
-    height: 20vh;
+    height: 25vh;
     width: 100%;
     display: flex;
     justify-content: space-evenly;

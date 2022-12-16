@@ -102,12 +102,65 @@ h1 {
     font-size: 16px;
     background-color: #f7c069;
     color: #333;
-    animation: 4s ease-in-out infinite pulse;
+    animation: 3s ease-in-out infinite pulse;
 }
 
 @keyframes pulse {
     50% {
         border-color: #00000080;
         box-shadow: 0 0 1rem #df5620c4;
+    }
+}
+
+
+@media (min-width: 576px) {
+    #title {
+        height: 25vh;
+    }
+    h1 {
+        margin: 2rem 1rem;
+        font-size: 2.5rem;
+    }
+    #title p {
+        font-size: 1.4rem;
+    }
+    #container {
+        padding: 3rem 1.5rem;
+        gap: 16px;
+    }
+    .btn {
+        width: 8rem;
+        height: 8rem;
+        border: .2rem solid #333;
+        font-size: 1.2rem;
+        text-shadow: 0 0 0.5rem #222;
+    }
+    .block{
+        border: .2rem solid #777;
+    }
+    #points {
+        font-size: 3rem;
+    }
+    #textScore {
+        font-size: 1.3rem;
+    }
+    #result {
+        height: 30vh;
+        padding-bottom: 1.8rem;
+    }
+    #result p {
+        font-size: 1.8rem;
+    }
+    #result button {
+        padding: 1rem 1.5rem;
+        border: 2px solid #333;
+        font-size: 1.2rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+    #container {
+        max-width: 900px;
     }
 }
